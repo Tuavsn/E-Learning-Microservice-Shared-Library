@@ -21,16 +21,19 @@ import java.util.Objects;
 @Setter
 @SuperBuilder
 public class BaseEntityAudit extends BaseEntity implements Serializable {
-    private String createdBy;
-    private String updatedBy;
+    protected String createdBy;
+    protected String updatedBy;
 
     @CreationTimestamp
     @Column(name = "create_at", updatable = false)
-    private Date createAt;
+    protected Date createAt;
 
     @UpdateTimestamp
     @Column(name = "update_at")
-    private Date updateAt;
+    protected Date updateAt;
+
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    protected boolean deleted = false;
 
     @Override
     public boolean equals(Object o) {

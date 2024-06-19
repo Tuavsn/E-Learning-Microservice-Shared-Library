@@ -24,7 +24,7 @@ public abstract class BaseEntity implements Serializable {
     @Id
     @GeneratedValue
     @Column(columnDefinition = "BINARY(16)", updatable = false, nullable = false)
-    private UUID id;
+    protected UUID id;
 
     @Override
     public boolean equals(Object obj) {
