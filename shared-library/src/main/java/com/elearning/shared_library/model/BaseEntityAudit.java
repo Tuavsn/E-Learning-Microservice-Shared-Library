@@ -20,7 +20,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @SuperBuilder
-public class BaseEntityAudit extends BaseEntity implements Serializable {
+public abstract class BaseEntityAudit extends BaseEntity implements Serializable {
     protected String createdBy;
     protected String updatedBy;
 
